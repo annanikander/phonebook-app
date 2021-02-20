@@ -1,1 +1,1 @@
-web: node index.js
+fail web: node index.js
