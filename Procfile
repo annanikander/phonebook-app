@@ -1,1 +1,1 @@
-fail web: node index.js
+fail web: npm start
