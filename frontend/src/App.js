@@ -133,7 +133,7 @@ const App = (props) => {
       <Error message={error} />
       <Filter newFilter={newFilter} filterPersons={filterPersons}/>
       <h2>Add a new person</h2>
-      <p>muutos 3</p>
+      <p>Testing here</p>
       <PersonForm 
         addPersonAndNumber={addPersonAndNumber}
         newName={newName}
