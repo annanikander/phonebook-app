@@ -14,28 +14,9 @@ morgan.token('type', function (req) {
   return JSON.stringify(req.body)
 })
 
-/*let persons = [
-    {
-      name: "Arto Hellas",
-      number: "040-123456",
-      id: 1
-    },
-    {
-      name: "Ada Lovelace",
-      number: "39-44-532513",
-      id: 2
-    },
-    {
-      name: "Dan Abramov",
-      number: "12-43-234345",
-      id: 3
-    },
-    {
-      name: "Mary Poppendick",
-      number: "39-23-64233122",
-      id: 4
-    }
-  ]*/
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
@@ -87,24 +68,6 @@ const generateId = () => {
 
 app.post('/api/persons', (request, response, next) => {
   const body = request.body
-
-  /*if (!body.name) {
-      return response.status(400).json({
-          error: 'name missing'
-      })
-  }
-
-  if (!body.number) {
-      return response.status(400).json({
-          error: 'number missing'
-      })
-  }
-
-  if (persons.map(person => person.name).includes(body.name)) {
-      return response.status(400).json({
-          error: 'name must be unique'
-      })
-  }*/
 
   const person = new Person({
     name: body.name,

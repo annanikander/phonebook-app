@@ -35,6 +35,9 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "phonebook-anna" #Must be unique in Heroku
           heroku_email: "anna.nikander@aalto.fi"
+          healthcheck: "https://phonebook-anna.herokuapp.com/health"
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
       #- name: test
         #run: npm run test
       #- name: e2e tests
