@@ -39,6 +39,13 @@ jobs:
           healthcheck: "https://phonebook-anna.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: false
+      - name: Bump version and push tag
+        if: ${{ github.event_name == 'push' && !(contains( join( toJson(github.event.commits.*.message) ), '#skip')) }}
+        uses: anothrNick/github-tag-action@1.33.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          RELEASE_BRANCHES: master
       #- name: test
         #run: npm run test
       #- name: e2e tests
