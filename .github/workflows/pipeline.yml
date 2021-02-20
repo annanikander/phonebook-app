@@ -21,6 +21,9 @@ jobs:
       - name: npm install frontend
         working-directory: './frontend'
         run: npm install
+      - name: build frontend
+        working-directory: './frontend'
+        run: npm run build
       - name: move build to backend
         working-directory: './frontend'
         run: mv './build' '../'
