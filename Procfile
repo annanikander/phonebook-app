@@ -1,1 +1,1 @@
-web: npm start-h
+web: npm start:h
