@@ -37,7 +37,7 @@ jobs:
           heroku_email: "anna.nikander@aalto.fi"
           healthcheck: "https://phonebook-anna.herokuapp.com/health"
           checkstring: "ok"
-          rollbackonhealthcheckfailed: true
+          #rollbackonhealthcheckfailed: true
       #- name: test
         #run: npm run test
       #- name: e2e tests
